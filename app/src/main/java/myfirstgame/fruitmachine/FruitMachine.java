@@ -84,13 +84,20 @@ public class FruitMachine {
         return answer;
     }
 
-    public ArrayList<Symbol> spin(Player player) {
+    public boolean playerCanAfford(Player player) {
+        if (player.getFunds() > costToPlay) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public ArrayList<Symbol> spin() {
         ArrayList<Symbol> spinReturns = new ArrayList<>();
         int counter = 0;
         while (counter < getRows()) {
             spinReturns.add(getSymbolAtIndex(getRandomNumber()));
             counter++;
-            player.setFunds(costToPlay);
         }
         for (Symbol symbol : spinReturns)
             System.out.print(" " + symbol.getEmoji() + " ");
@@ -109,8 +116,8 @@ public class FruitMachine {
         return matched;
     }
 
-    public boolean jackpotChecker(Player player) {
-        if (rowAllTheSame(symbols) && (spin(player).get(0).getSymbolName().equals("Clover"))) {
+    public boolean jackpotChecker(ArrayList<Symbol> result) {
+        if (rowAllTheSame(symbols) && (result.get(0).getSymbolName().equals("Clover"))) {
             return true;
         }
         return false;

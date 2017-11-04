@@ -67,8 +67,8 @@ public class TestFruitMachine {
         spyArray.add(Symbol.BELL);
         spyArray.add(Symbol.BELL);
 
-        Mockito.when(spy.spin(player)).thenReturn(spyArray);
-        assertEquals(true, spy.rowAllTheSame( spy.spin(player) ));
+        Mockito.when(spy.spin()).thenReturn(spyArray);
+        assertEquals(true, spy.rowAllTheSame( spy.spin() ));
     }
 
     @Test
@@ -79,9 +79,9 @@ public class TestFruitMachine {
         spyArray.add(Symbol.BELL);
         spyArray.add(Symbol.BELL);
 
-        Mockito.when(spy.spin(player)).thenReturn(spyArray);
+        Mockito.when(spy.spin()).thenReturn(spyArray);
 
-        assertEquals(false, spy.rowAllTheSame( spy.spin(player) ));
+        assertEquals(false, spy.rowAllTheSame( spy.spin() ));
     }
 
     @Test
@@ -92,8 +92,8 @@ public class TestFruitMachine {
         spyArray.add(Symbol.CLOVER);
         spyArray.add(Symbol.CLOVER);
 
-        Mockito.when(spy.spin(player)).thenReturn(spyArray);
-//        spy.rowAllTheSame( spy.spin(player) );
-        assertEquals(true, spy.jackpotChecker(player));
+        Mockito.when(spy.spin()).thenReturn(spyArray);
+
+        assertEquals(true, spy.jackpotChecker(spyArray));
     }
 }

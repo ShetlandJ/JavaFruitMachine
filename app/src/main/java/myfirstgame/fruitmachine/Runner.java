@@ -22,7 +22,7 @@ public class Runner {
 
         int counter = 0;
         while (gameWon) {
-            ArrayList<Symbol>result = fruity.spin(player);
+            ArrayList<Symbol>result = fruity.spin();
             System.out.println("");
             if (fruity.rowAllTheSame(result)) {
                 counter++;
