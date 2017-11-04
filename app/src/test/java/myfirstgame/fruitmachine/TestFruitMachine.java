@@ -86,14 +86,13 @@ public class TestFruitMachine {
 
     @Test
     public void canGetJackpot(){
-        FruitMachine spy = Mockito.spy(new FruitMachine("Jumpin' Jack's Jackpot Jackstraveganza", 1000, 1, 3));
-        ArrayList<Symbol> spyArray = new ArrayList<>();
-        spyArray.add(Symbol.CLOVER);
-        spyArray.add(Symbol.CLOVER);
-        spyArray.add(Symbol.CLOVER);
+        FruitMachine testFruity  = new FruitMachine("Jumpin' Jack's Jackpot Jackstraveganza", 1000, 1, 3);
+        ArrayList<Symbol> testSymbolArray = new ArrayList<>();
+        testSymbolArray.add(Symbol.CLOVER);
+        testSymbolArray.add(Symbol.CLOVER);
+        testSymbolArray.add(Symbol.CLOVER);
+        System.out.println(testFruity.jackpotChecker(testSymbolArray));
 
-        Mockito.when(spy.spin()).thenReturn(spyArray);
-
-        assertEquals(true, spy.jackpotChecker(spyArray));
+        assertEquals(true, testFruity.jackpotChecker(testSymbolArray));
     }
 }

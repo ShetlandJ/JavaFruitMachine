@@ -117,10 +117,7 @@ public class FruitMachine {
     }
 
     public boolean jackpotChecker(ArrayList<Symbol> result) {
-        if (rowAllTheSame(symbols) && (result.get(0).getSymbolName().equals("Clover"))) {
-            return true;
-        }
-        return false;
+        return rowAllTheSame(result) && (result.get(0).getSymbolName().equals("Clover"));
     }
 
 }
