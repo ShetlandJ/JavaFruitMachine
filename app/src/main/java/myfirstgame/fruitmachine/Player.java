@@ -7,9 +7,9 @@ package myfirstgame.fruitmachine;
 public class Player {
 
     private String name;
-    private int funds;
+    private double funds;
 
-    public Player(String name, int funds) {
+    public Player(String name, double funds) {
         this.name = name;
         this.funds = funds;
     }
@@ -18,11 +18,11 @@ public class Player {
         return name;
     }
 
-    public int getFunds() {
+    public double getFunds() {
         return funds;
     }
 
-    public void setFunds(int funds) {
+    public void setFunds(double funds) {
         this.funds += funds;
     }
 }

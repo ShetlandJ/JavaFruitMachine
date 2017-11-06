@@ -85,9 +85,10 @@ public class FruitMachine {
     }
 
     public boolean playerCanAfford(Player player) {
-        if (player.getFunds() > costToPlay) {
+        if (player.getFunds() >= costToPlay) {
             return true;
         }
+        System.out.println("You've run out of cash!");
         return false;
     }
 
@@ -102,6 +103,7 @@ public class FruitMachine {
         for (Symbol symbol : spinReturns)
             System.out.print(" " + symbol.getEmoji() + " ");
         return spinReturns;
+
     }
 
     public boolean rowAllTheSame(ArrayList<Symbol> result) {

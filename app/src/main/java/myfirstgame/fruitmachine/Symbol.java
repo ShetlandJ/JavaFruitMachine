@@ -14,6 +14,7 @@ public enum Symbol {
     EIGHT("Eight", 8, "🎱"),
     DIAMOND("Diamond", 10, "💎"),
     CLOVER("Clover", 15, "🍀");
+    MICHAELSLEVINSFAVOURITEFOOD("Strawberry", 150000, "🍓");
 
     protected String symbolName;
     private int symbolValue;
